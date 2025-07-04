@@ -9,6 +9,7 @@
     "lint": "eslint --fix"
   },
   "dependencies": {
+    "@antfu/eslint-config": "^4.16.2",
     "@heroui/button": "2.2.21",
     "@heroui/card": "^2.2.20",
     "@heroui/code": "2.2.16",
@@ -25,6 +26,9 @@
     "@react-aria/ssr": "3.9.9",
     "@react-aria/visually-hidden": "3.8.24",
     "clsx": "2.1.1",
+    "eslint-plugin-sonarjs": "^3.0.4",
+    "eslint-plugin-storybook": "^9.0.15",
+    "eslint-plugin-tailwindcss": "^3.18.0",
     "framer-motion": "11.13.1",
     "intl-messageformat": "10.7.16",
     "ky": "^1.8.1",
