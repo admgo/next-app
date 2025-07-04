@@ -1,12 +1,7 @@
-export default function MainLayout({
+export default function ServiceLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <div>
-      <div>Nav</div>
-      {children}
-    </div>
-  );
+  return <div>{children}</div>;
 }
