@@ -1,59 +1,98 @@
-import type { IOtherOptions } from "./base";
-import type { AfterResponseHook, Hooks } from "ky";
+import type { IOtherOptions } from './base'
+import type { AfterResponseHook, BeforeErrorHook, Hooks } from 'ky'
 
-import ky from "ky";
+import { addToast } from '@heroui/react'
+import ky from 'ky'
 
-import { API_URI_PREFIX, AUTH_URI_PREFIX } from "@/config/path";
+import { API_URI_PREFIX, AUTH_URI_PREFIX } from '@/config/path'
 
-const TIME_OUT = 100000;
+const TIME_OUT = 100000
 
 export type ResponseError = {
   code: string;
   message: string;
   status: number;
-};
+}
 
-export type FetchOptionType = Omit<RequestInit, "body"> & {
+export type FetchOptionType = Omit<RequestInit, 'body'> & {
   params?: Record<string, any>;
   body?: BodyInit | Record<string, any> | null;
-};
+}
 
 export const ContentType = {
-  json: "application/json",
-  stream: "text/event-stream",
-  audio: "audio/mpeg",
-  form: "application/x-www-form-urlencoded; charset=UTF-8",
-  download: "application/octet-stream", // for download
-  downloadZip: "application/zip", // for download
-  upload: "multipart/form-data", // for upload
-};
+  json: 'application/json',
+  stream: 'text/event-stream',
+  audio: 'audio/mpeg',
+  form: 'application/x-www-form-urlencoded; charset=UTF-8',
+  download: 'application/octet-stream', // for download
+  downloadZip: 'application/zip', // for download
+  upload: 'multipart/form-data', // for upload
+}
 
 export const baseOptions: RequestInit = {
-  method: "GET",
-  mode: "cors",
-  credentials: "include", // always send cookies、HTTP Basic authentication.
+  method: 'GET',
+  mode: 'cors',
+  credentials: 'include', // always send cookies、HTTP Basic authentication.
   headers: new Headers({
-    "Content-Type": ContentType.json,
+    'Content-Type': ContentType.json,
   }),
-  redirect: "follow",
-};
+  redirect: 'follow',
+}
+
+const afterResponseErrorCode = (otherOptions: IOtherOptions): AfterResponseHook => {
+  return async (_request, _options, response) => {
+    const clonedResponse = response.clone()
+
+    if (!/^([23])\d{2}$/.test(String(clonedResponse.status))) {
+      const bodyJson = clonedResponse.json() as Promise<ResponseError>
+
+      switch (clonedResponse.status) {
+        case 403:
+          bodyJson.then((data: ResponseError) => {
+            if (!otherOptions.silent)
+              addToast({ color: 'danger', description: data.message })
+          })
+          break
+        case 401:
+          return Promise.reject(response)
+        // fall through
+        default:
+          bodyJson.then((data: ResponseError) => {
+            if (!otherOptions.silent)
+              addToast({ color: 'danger', description: data.message })
+          })
+
+          return Promise.reject(response)
+      }
+    }
+  }
+}
+
+const beforeErrorToast = (otherOptions: IOtherOptions): BeforeErrorHook => {
+  return (error) => {
+    if (!otherOptions.silent)
+      addToast({ color: 'danger', description: error.message })
+
+    return error
+  }
+}
 
 const afterResponse204: AfterResponseHook = async (
   _request,
   _options,
   response,
 ) => {
-  if (response.status === 204) return Response.json({ result: "success" });
-};
+  if (response.status === 204) return Response.json({ result: 'success' })
+}
 
 const baseHooks: Hooks = {
   afterResponse: [afterResponse204],
-};
+}
 
 const httpClient = ky.create({
   hooks: baseHooks,
   timeout: TIME_OUT,
-});
+})
 
 export async function base<T>(
   url: string,
@@ -64,7 +103,7 @@ export async function base<T>(
     {},
     baseOptions,
     options,
-  );
+  )
   const {
     isAPI = false,
     isAuthURL = false,
@@ -72,24 +111,24 @@ export async function base<T>(
     needAllResponseContent,
     deleteContentType,
     getAbortController,
-  } = otherOptions;
+  } = otherOptions
 
-  let base: string;
+  let base: string
 
-  if (isAuthURL) base = AUTH_URI_PREFIX;
-  else if (isAPI) base = API_URI_PREFIX;
-  else base = API_URI_PREFIX;
+  if (isAuthURL) base = AUTH_URI_PREFIX
+  else if (isAPI) base = API_URI_PREFIX
+  else base = API_URI_PREFIX
 
   if (getAbortController) {
-    const abortController = new AbortController();
+    const abortController = new AbortController()
 
-    getAbortController(abortController);
-    options.signal = abortController.signal;
+    getAbortController(abortController)
+    options.signal = abortController.signal
   }
 
-  const fetchPathname = base + (url.startsWith("/") ? url : `/${url}`);
+  const fetchPathname = base + (url.startsWith('/') ? url : `/${url}`)
 
-  if (deleteContentType) (headers as any).delete("Content-Type");
+  if (deleteContentType) (headers as any).delete('Content-Type')
 
   const client = httpClient.extend({
     hooks: {
@@ -100,49 +139,47 @@ export async function base<T>(
       ],
       beforeRequest: [
         ...(baseHooks.beforeRequest || []),
-        isPublicAPI && beforeRequestPublicAuthorization,
-        !isPublicAPI && !isMarketplaceAPI && beforeRequestAuthorization,
+        // isPublicAPI && beforeRequestPublicAuthorization,
+        // !isPublicAPI && !isMarketplaceAPI && beforeRequestAuthorization,
       ].filter(Boolean),
       afterResponse: [
         ...(baseHooks.afterResponse || []),
         afterResponseErrorCode(otherOptions),
       ],
     },
-  });
+  })
 
   const res = await client(fetchPathname, {
-    ...init,
-    headers,
-    credentials: isMarketplaceAPI ? "omit" : options.credentials || "include",
-    retry: {
-      methods: [],
-    },
-    ...(bodyStringify ? { json: body } : { body: body as BodyInit }),
-    searchParams: params,
+ ...init,
+headers,
+retry: { methods: [] },
+...(bodyStringify ? { json: body } : { body: body as BodyInit }),
+searchParams: params,
     fetch(resource: RequestInfo | URL, options?: RequestInit) {
       if (resource instanceof Request && options) {
-        const mergedHeaders = new Headers(options.headers || {});
+        const mergedHeaders = new Headers(options.headers || {})
 
         resource.headers.forEach((value, key) => {
-          mergedHeaders.append(key, value);
-        });
-        options.headers = mergedHeaders;
+          mergedHeaders.append(key, value)
+        })
+        options.headers = mergedHeaders
       }
 
-      return globalThis.fetch(resource, options);
+      return globalThis.fetch(resource, options)
     },
-  });
+  })
 
-  if (needAllResponseContent) return res as T;
-  const contentType = res.headers.get("content-type");
+  if (needAllResponseContent) return res as T
+  const contentType = res.headers.get('content-type')
 
   if (
-    contentType &&
-    [ContentType.download, ContentType.audio, ContentType.downloadZip].includes(
+    contentType
+    && [ContentType.download, ContentType.audio, ContentType.downloadZip].includes(
       contentType,
     )
   )
-    return (await res.blob()) as T;
 
-  return (await res.json()) as T;
+    return (await res.blob()) as T
+
+  return (await res.json()) as T
 }
