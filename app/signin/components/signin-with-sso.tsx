@@ -9,7 +9,9 @@ export default function SigninWithSSO() {
       startContent={<Icon icon="flat-color-icons:google" width={24} />}
       variant="bordered"
     >
-      Continue with Google
+      <span className="font-semibold">
+              Continue with Google
+      </span>
     </Button>
   );
 }
