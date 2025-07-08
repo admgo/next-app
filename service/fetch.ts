@@ -1,5 +1,5 @@
 import type { IOtherOptions } from './base'
-import type { AfterResponseHook, BeforeErrorHook, Hooks } from 'ky'
+import type { AfterResponseHook, BeforeErrorHook, BeforeRequestHook, Hooks } from 'ky'
 
 import { addToast } from '@heroui/react'
 import ky from 'ky'
@@ -77,12 +77,22 @@ const beforeErrorToast = (otherOptions: IOtherOptions): BeforeErrorHook => {
   }
 }
 
-const afterResponse204: AfterResponseHook = async (
-  _request,
-  _options,
-  response,
-) => {
+const afterResponse204: AfterResponseHook = async (_request, _options, response) => {
   if (response.status === 204) return Response.json({ result: 'success' })
+}
+
+export function getAccessToken() {
+  return localStorage.getItem('access_token') || ''
+}
+
+const beforeRequestPublicAuthorization: BeforeRequestHook = (request) => {
+  const token = getAccessToken()
+  request.headers.set('Authorization', `Bearer ${token}`)
+}
+
+const beforeRequestAuthorization: BeforeRequestHook = (request) => {
+  const accessToken = getAccessToken()
+  request.headers.set('Authorization', `Bearer ${accessToken}`)
 }
 
 const baseHooks: Hooks = {
@@ -139,9 +149,9 @@ export async function base<T>(
       ],
       beforeRequest: [
         ...(baseHooks.beforeRequest || []),
-        // isPublicAPI && beforeRequestPublicAuthorization,
+        isAuthURL && beforeRequestPublicAuthorization,
         // !isPublicAPI && !isMarketplaceAPI && beforeRequestAuthorization,
-      ].filter(Boolean),
+      ].filter((hook): hook is BeforeRequestHook => hook !== null),
       afterResponse: [
         ...(baseHooks.afterResponse || []),
         afterResponseErrorCode(otherOptions),

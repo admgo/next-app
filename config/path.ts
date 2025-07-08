@@ -9,7 +9,7 @@ if (
   authUriPrefix = process.env.NEXT_PUBLIC_PUBLIC_API_PREFIX
 }
  else {
-  apiUriPrefix = 'http://localhost:8080/api'
+  apiUriPrefix = 'http://localhost:8080'
   authUriPrefix = 'http://localhost:8080/auth'
 }
 
