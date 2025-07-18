@@ -1,22 +1,22 @@
+'use client'
 import { Chip } from '@heroui/react'
 import { Icon } from '@iconify/react'
+import type { MenuProps } from '@/components/menu/store'
 
-import type { SidebarItem } from '@/components/sidebar/sidebar'
-
-/**
- * Please check the https://heroui.com/docs/guide/routing to have a seamless router integration
- */
+import type {
+  SidebarItem,
+} from '@/components/sidebar/sidebar'
 
 export const items: SidebarItem[] = [
   {
     key: 'home',
-    href: '#',
+    href: '/home/access',
     icon: 'solar:home-2-linear',
     title: 'Home',
   },
   {
     key: 'projects',
-    href: '#',
+    href: '/home/my',
     icon: 'solar:widget-2-outline',
     title: 'Projects',
     endContent: (
@@ -87,3 +87,11 @@ export const items: SidebarItem[] = [
     title: 'Settings',
   },
 ]
+
+export const menu: MenuProps = {
+  title: '首页',
+  description: '描述',
+  defaultSelectedKey: 'home',
+  items,
+  customFooterContent: (<div>ppp</div>),
+}

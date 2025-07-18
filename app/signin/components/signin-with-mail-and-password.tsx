@@ -1,22 +1,22 @@
-"use client";
+'use client'
 
-import React from "react";
-import { Button, Input, Checkbox, Link, Form } from "@heroui/react";
-import { Icon } from "@iconify/react";
+import React from 'react'
+import { Button, Form, Input } from '@heroui/react'
+import { Icon } from '@iconify/react'
 
 export default function SigninWithMailAndPassword() {
-  const [isVisible, setIsVisible] = React.useState(false);
+  const [isVisible, setIsVisible] = React.useState(false)
 
-  const toggleVisibility = () => setIsVisible(!isVisible);
+  const toggleVisibility = () => setIsVisible(!isVisible)
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    console.log("handleSubmit");
-  };
+    event.preventDefault()
+    console.log('handleSubmit')
+  }
 
   return (
     <div className="flex h-full w-full items-center justify-center">
-      <div className="flex w-full max-w-sm flex-col gap-4 rounded-large px-8 pb-10 pt-6">
+      <div className="rounded-large flex w-full max-w-sm flex-col gap-4 px-8 pb-10 pt-6">
         <Form
           className="flex flex-col gap-4"
           validationBehavior="native"
@@ -37,12 +37,12 @@ export default function SigninWithMailAndPassword() {
               <button type="button" onClick={toggleVisibility}>
                 {isVisible ? (
                   <Icon
-                    className="pointer-events-none text-2xl text-default-400"
+                    className="text-default-400 pointer-events-none text-2xl"
                     icon="solar:eye-closed-linear"
                   />
                 ) : (
                   <Icon
-                    className="pointer-events-none text-2xl text-default-400"
+                    className="text-default-400 pointer-events-none text-2xl"
                     icon="solar:eye-bold"
                   />
                 )}
@@ -52,7 +52,7 @@ export default function SigninWithMailAndPassword() {
             labelPlacement="outside"
             name="password"
             placeholder="Enter your password"
-            type={isVisible ? "text" : "password"}
+            type={isVisible ? 'text' : 'password'}
             variant="bordered"
           />
           <Button className="w-full font-semibold" color="primary" type="submit">
@@ -61,5 +61,5 @@ export default function SigninWithMailAndPassword() {
         </Form>
       </div>
     </div>
-  );
+  )
 }

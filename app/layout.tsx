@@ -1,11 +1,11 @@
-import "@/styles/globals.css";
-import { Metadata, Viewport } from "next";
-import clsx from "clsx";
+import '@/styles/globals.css'
+import type { Metadata, Viewport } from 'next'
+import clsx from 'clsx'
 
-import { Providers } from "./providers";
+import { Providers } from './providers'
 
-import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
+import { siteConfig } from '@/config/site'
+import { fontMono } from '@/config/fonts'
 
 export const metadata: Metadata = {
   title: {
@@ -14,16 +14,16 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   icons: {
-    icon: "/favicon.ico",
+    icon: '/favicon.ico',
   },
-};
+}
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
-};
+}
 
 export default function RootLayout({
   children,
@@ -35,16 +35,16 @@ export default function RootLayout({
       <head />
       <body
         className={clsx(
-          "min-h-screen text-foreground bg-background font-sans antialiased",
-          fontSans.variable,
+          'text-foreground bg-background min-h-screen font-sans antialiased',
+          fontMono.variable,
         )}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
-          <div className="relative flex h-full w-full items-start overflow-x-auto overflow-y-auto transition-colors duration-200 p-4 justify-center light bg-background text-foreground">
+        <Providers themeProps={{ attribute: 'class', defaultTheme: 'light' }}>
+          <div className="relative h-full w-full overflow-x-auto overflow-y-auto">
               {children}
           </div>
         </Providers>
       </body>
     </html>
-  );
+  )
 }
