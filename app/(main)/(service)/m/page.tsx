@@ -1,3 +1,3 @@
 export default function M() {
-  return <div>m</div>;
+  return <div>m</div>
 }

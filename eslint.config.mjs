@@ -4,7 +4,8 @@ import {
 } from '@antfu/eslint-config'
 import globals from 'globals'
 import storybook from 'eslint-plugin-storybook'
-// import { fixupConfigRules } from '@eslint/compat'
+import prettier from 'eslint-plugin-prettier'
+import { fixupPluginRules } from '@eslint/compat'
 import tailwind from 'eslint-plugin-tailwindcss'
 import reactHooks from 'eslint-plugin-react-hooks'
 import sonar from 'eslint-plugin-sonarjs'
@@ -179,6 +180,7 @@ export default combine(
         },
         plugins: {
             sonarjs: sonar,
+            prettier: fixupPluginRules(prettier),
         },
     },
     // need further research

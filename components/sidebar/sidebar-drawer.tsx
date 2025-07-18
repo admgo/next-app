@@ -1,15 +1,15 @@
-"use client";
-import type { ModalProps } from "@heroui/react";
+'use client'
+import type { ModalProps } from '@heroui/react'
 
-import React from "react";
-import { TRANSITION_EASINGS } from "@heroui/framer-utils";
-import { cn, Drawer, DrawerBody, DrawerContent } from "@heroui/react";
+import React from 'react'
+import { TRANSITION_EASINGS } from '@heroui/framer-utils'
+import { Drawer, DrawerBody, DrawerContent, cn } from '@heroui/react'
 
 const SidebarDrawer = React.forwardRef<
   HTMLDivElement,
   ModalProps & {
     sidebarWidth?: number;
-    sidebarPlacement?: "left" | "right";
+    sidebarPlacement?: 'left' | 'right';
   }
 >(
   (
@@ -20,16 +20,15 @@ const SidebarDrawer = React.forwardRef<
       isOpen,
       sidebarWidth = 288,
       classNames = {},
-      sidebarPlacement = "left",
+      sidebarPlacement = 'left',
       motionProps: drawerMotionProps,
       ...props
     },
     ref,
   ) => {
     const motionProps = React.useMemo(() => {
-      if (!!drawerMotionProps && typeof drawerMotionProps === "object") {
-        return drawerMotionProps;
-      }
+      if (!!drawerMotionProps && typeof drawerMotionProps === 'object')
+        return drawerMotionProps
 
       return {
         variants: {
@@ -43,7 +42,7 @@ const SidebarDrawer = React.forwardRef<
             },
           },
           exit: {
-            x: sidebarPlacement == "left" ? -sidebarWidth : sidebarWidth,
+            x: sidebarPlacement === 'left' ? -sidebarWidth : sidebarWidth,
             transition: {
               x: {
                 duration: 0.2,
@@ -52,8 +51,8 @@ const SidebarDrawer = React.forwardRef<
             },
           },
         },
-      };
-    }, [sidebarWidth, sidebarPlacement, drawerMotionProps]);
+      }
+    }, [sidebarWidth, sidebarPlacement, drawerMotionProps])
 
     return (
       <>
@@ -62,31 +61,32 @@ const SidebarDrawer = React.forwardRef<
           {...props}
           classNames={{
             ...classNames,
-            wrapper: cn("!w-[var(--sidebar-width)]", classNames?.wrapper, {
-              "!items-start !justify-start ": sidebarPlacement === "left",
-              "!items-end !justify-end": sidebarPlacement === "right",
+            wrapper: cn('!w-[var(--sidebar-width)]', classNames?.wrapper, {
+              '!items-start !justify-start ': sidebarPlacement === 'left',
+              '!items-end !justify-end': sidebarPlacement === 'right',
             }),
             base: cn(
-              "w-[var(--sidebar-width)] !m-0 p-0 h-full max-h-full",
+              '!m-0 h-full max-h-full w-[var(--sidebar-width)] p-0',
               classNames?.base,
               className,
               {
-                "inset-y-0 left-0 max-h-[none] rounded-l-none !justify-start":
-                  sidebarPlacement === "left",
-                "inset-y-0 right-0 max-h-[none] rounded-r-none !justify-end":
-                  sidebarPlacement === "right",
+                'inset-y-0 left-0 max-h-[none] rounded-l-none !justify-start':
+                  sidebarPlacement === 'left',
+                'inset-y-0 right-0 max-h-[none] rounded-r-none !justify-end':
+                  sidebarPlacement === 'right',
               },
             ),
-            body: cn("p-0", classNames?.body),
-            closeButton: cn("z-50", classNames?.closeButton),
+            body: cn('p-0', classNames?.body),
+            closeButton: cn('z-50', classNames?.closeButton),
           }}
           isOpen={isOpen}
           motionProps={motionProps}
           radius="none"
           scrollBehavior="inside"
           style={{
-            // @ts-ignore
-            "--sidebar-width": `${sidebarWidth}px`,
+            // eslint-disable-next-line ts/ban-ts-comment
+            // @ts-expect-error
+            '--sidebar-width': `${sidebarWidth}px`,
           }}
           onOpenChange={onOpenChange}
         >
@@ -96,17 +96,17 @@ const SidebarDrawer = React.forwardRef<
         </Drawer>
         <div
           className={cn(
-            "hidden h-full max-w-[var(--sidebar-width)] overflow-x-hidden overflow-y-scroll sm:flex",
+            'hidden h-full max-w-[var(--sidebar-width)] overflow-x-hidden overflow-y-scroll sm:flex',
             className,
           )}
         >
           {children}
         </div>
       </>
-    );
+    )
   },
-);
+)
 
-SidebarDrawer.displayName = "SidebarDrawer";
+SidebarDrawer.displayName = 'SidebarDrawer'
 
-export default SidebarDrawer;
+export default SidebarDrawer

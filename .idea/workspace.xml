@@ -5,39 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f956fc9-5c30-489d-86a1-1a86c3e367d0" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/app/(main)/(service)/cmdb/items.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(main)/(service)/cmdb/menu-1/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(main)/(service)/cmdb/menu-1/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/signin/components/signin-with-ldap.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/signin/components/signin-with-mail-and-password.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/signin/components/signin-with-sso.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/signin/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/sidebar/items.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/path.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/next-bk.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/base.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/var.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(main)/home/page-bk.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/menu/menu-footer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/menu/menu-header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/menu/menu-info.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/menu/menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(main)/(service)/cmdb/items.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(service)/cmdb/items.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(main)/(service)/cmdb/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(service)/cmdb/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(main)/(service)/cmdb/menu-1/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(service)/cmdb/menu-1/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(main)/(service)/cmdb/menu-1/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(service)/cmdb/menu-1/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(main)/(service)/cmdb/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(service)/cmdb/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(main)/(service)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(service)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(main)/(service)/m/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(service)/m/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(main)/(service)/m/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(service)/m/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(main)/home/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/home/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(main)/home/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/home/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(main)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/error.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/error.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/login/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/signin/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/login/page.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/providers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/providers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/signin/components/signin-with-mail-and-password.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/signin/components/signin-with-mail-and-password.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/signin/components/signin-with-sso.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/signin/components/signin-with-sso.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/signin/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/signin/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/signin/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/signin/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/counter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/counter.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/icons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/icons.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sidebar/acme.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sidebar/app.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/navbar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/primitives.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/primitives.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sidebar/items.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sidebar/items.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/sidebar/sidebar-drawer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sidebar/sidebar-drawer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sidebar/sidebar-items.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sidebar/team-avatar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sidebar/sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sidebar/sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/theme-switch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/theme-switch.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/fonts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/fonts.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/site.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/site.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/next.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/next.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eslint.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/eslint.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/types/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/var.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/var.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +57,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -66,6 +76,12 @@
     &quot;accountId&quot;: &quot;057ba112-f9ba-4ffd-b15c-79bc8fa6190c&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/node_modules/.pnpm/@heroui+navbar@2.2.19_@heroui+system@2.4.17_@heroui+theme@2.4.17_tailwindcss@3.4.16__fr_fedbd5766fe6974747bf2b690b2a1720/node_modules/@heroui/navbar/dist/navbar-content.d.ts" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node_modules/.pnpm/@heroui+react@2.7.10_@types+react@18.3.3_framer-motion@11.13.1_react-dom@18.3.1_react@1_9ea41fc7e0e3f7c6b303a5167a6f8a41/node_modules/@heroui/react/dist/index.d.ts" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node_modules/.pnpm/@heroui+theme@2.4.17_tailwindcss@3.4.16/node_modules/@heroui/theme/dist/plugin.d.ts" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node_modules/.pnpm/ky@1.8.1/node_modules/ky/distribution/types/hooks.d.ts" root0="SKIP_INSPECTION" />
+  </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -79,26 +95,30 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
-    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/kenley/github/admgo/next-app/assets&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/kenley/github/admgo/next-app/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "layout",
+    "js.debugger.nextJs.config.created.client": "true",
+    "js.debugger.nextJs.config.created.server": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/Users/kenley/github/admgo/next-app/assets",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "pnpm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/kenley/github/admgo/next-app/node_modules/prettier",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/Users/kenley/github/admgo/next-app/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets" />
@@ -156,6 +176,11 @@
       <workItem from="1751434922512" duration="1373000" />
       <workItem from="1751436616377" duration="2033000" />
       <workItem from="1751440513730" duration="6786000" />
+      <workItem from="1751595110749" duration="17575000" />
+      <workItem from="1751871115409" duration="48104000" />
+      <workItem from="1752466516162" duration="648000" />
+      <workItem from="1752475914866" duration="2761000" />
+      <workItem from="1752647795193" duration="10743000" />
     </task>
     <servers />
   </component>
