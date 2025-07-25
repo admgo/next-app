@@ -45,7 +45,6 @@ const Menu: React.FC<MenuProps> = ({ ref, ...props }: MenuProps) => {
       customFooterContent: state.customFooterContent,
     })),
   )
-  console.log(title)
 
   const [isCollapsed, setIsCollapsed] = React.useState(false)
   const isMobile = useMediaQuery('(max-width: 768px)')
@@ -53,7 +52,6 @@ const Menu: React.FC<MenuProps> = ({ ref, ...props }: MenuProps) => {
   const isCompact = isCollapsed || isMobile
 
   const onToggle = () => {
-    console.log(isCollapsed)
     setIsCollapsed(prev => !prev)
   }
 

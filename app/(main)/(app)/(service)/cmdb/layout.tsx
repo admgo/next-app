@@ -7,7 +7,6 @@ export default function CMDBLayout({
 }: {
   children: React.ReactNode;
 }) {
-  console.log('CMDBServiceLayout')
   useMenuStore.setState(
     {
       title: menu.title,
