@@ -1,6 +1,6 @@
 'use client'
 import { useMenuStore } from '@/components/menu/store'
-import { menu } from '@/app/(main)/(service)/cmdb/menu'
+import { menu } from '@/app/(main)/(app)/(service)/cmdb/menu'
 
 export default function CMDBLayout({
   children,

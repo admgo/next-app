@@ -1,7 +1,7 @@
 'use client'
 import { menu } from '@/app/(main)/home/menu'
 import { useMenuStore } from '@/components/menu/store'
-export default function ServiceLayout({
+export default function HomeLayout({
   children,
 }: {
   children: React.ReactNode;

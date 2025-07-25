@@ -94,14 +94,6 @@ const SidebarDrawer = React.forwardRef<
             <DrawerBody>{children}</DrawerBody>
           </DrawerContent>
         </Drawer>
-        <div
-          className={cn(
-            'hidden h-full max-w-[var(--sidebar-width)] overflow-x-hidden overflow-y-scroll sm:flex',
-            className,
-          )}
-        >
-          {children}
-        </div>
       </>
     )
   },
