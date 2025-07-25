@@ -1,6 +1,6 @@
 'use client'
 import Header from '@/components/header'
-import { Menu } from '@/components/menu/menu'
+import Menu from '@/components/menu/menu'
 import { Button } from '@heroui/button'
 import { Icon } from '@iconify/react'
 import React from 'react'
@@ -11,7 +11,8 @@ export default function ServiceLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const { onOpen } = useMenuStore()
+  const onOpen = useMenuStore(store => store.onOpen)
+  console.log('ServiceLayout')
   return (
     <div className="flex h-screen flex-col">
       <div className="shrink-0">

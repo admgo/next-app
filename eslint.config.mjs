@@ -15,7 +15,7 @@ import sonar from 'eslint-plugin-sonarjs'
 export default combine(
     stylistic({
         lessOpinionated: true,
-        // original @antfu/eslint-config does not support jsx
+        // the original @antfu / eslint-config does not support jsx
         jsx: false,
         semi: false,
         quotes: 'single',
@@ -43,7 +43,7 @@ export default combine(
             'style/template-curly-spacing': ['error', 'never'],
             'style/keyword-spacing': 'off',
 
-            // not exist in old version, and big change
+            // not exist in an old version, and big change
             'style/member-delimiter-style': 'off',
         },
     }),

@@ -8,7 +8,7 @@ import {
   type Selection,
 } from '@heroui/react'
 import React from 'react'
-import { Listbox, ListboxItem, ListboxSection, Tooltip } from '@heroui/react'
+import { Listbox, ListboxItem, ListboxSection, Skeleton, Tooltip } from '@heroui/react'
 import { Icon } from '@iconify/react'
 import { cn } from '@heroui/react'
 
@@ -300,16 +300,16 @@ const Sidebar = React.forwardRef<HTMLElement, SidebarProps>(
             && item?.type === SidebarItemType.Nest ? (
             renderNestItem(item)
           ) : item.items && item.items?.length > 0 ? (
-            <ListboxSection
-              key={item.key}
-              classNames={sectionClasses}
-              showDivider={isCompact}
-              title={item.title}
-            >
-              {item.items.map(renderItem)}
-            </ListboxSection>
+              <ListboxSection
+                key={item.key}
+                classNames={sectionClasses}
+                showDivider={isCompact}
+                title={item.title}
+              >
+                {item.items.map(renderItem)}
+              </ListboxSection>
           ) : (
-            renderItem(item)
+              renderItem(item)
           )
         }}
       </Listbox>

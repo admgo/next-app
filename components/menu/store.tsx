@@ -12,14 +12,14 @@ type Action = {
 }
 
 export const useMenuStore = create<
-  MenuProps
+    MenuProps
     & Action & {
       isOpen: boolean;
       onOpen: () => void;
       onOpenChange: () => void;
     }
->((set) => {
-  return {
+>(set => ({
+  // return {
     title: undefined,
     description: undefined,
     customHeaderContent: undefined,
@@ -39,5 +39,5 @@ export const useMenuStore = create<
     isOpen: false,
     onOpen: () => set({ isOpen: true }),
     onOpenChange: () => set({ isOpen: false }),
-  }
-})
+  // }
+}))

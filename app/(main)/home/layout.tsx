@@ -6,8 +6,17 @@ export default function ServiceLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const setMenu = useMenuStore(s => s.setMenu)
-  setMenu(menu)
+  console.log('HomeServiceLayout')
+  useMenuStore.setState(
+    {
+      title: menu.title,
+      items: menu.items,
+      defaultSelectedKey: menu.defaultSelectedKey,
+      description: menu.description,
+      customHeaderContent: menu.title ? menu.customHeaderContent : undefined,
+      customFooterContent: menu.customFooterContent,
+    },
+  )
   return (
     <>
       {children}

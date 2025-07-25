@@ -12,13 +12,13 @@ export const items: SidebarItem[] = [
     key: 'home',
     href: '/home/access',
     icon: 'solar:home-2-linear',
-    title: 'Home',
+    title: '模型概览',
   },
   {
     key: 'projects',
     href: '/home/my',
     icon: 'solar:widget-2-outline',
-    title: 'Projects',
+    title: '模型',
     endContent: (
       <Icon
         className="text-default-400"
@@ -31,7 +31,7 @@ export const items: SidebarItem[] = [
     key: 'tasks',
     href: '#',
     icon: 'solar:checklist-minimalistic-outline',
-    title: 'Tasks',
+    title: '新建模型',
     endContent: (
       <Icon
         className="text-default-400"
@@ -44,7 +44,7 @@ export const items: SidebarItem[] = [
     key: 'team',
     href: '#',
     icon: 'solar:users-group-two-rounded-outline',
-    title: 'Team',
+    title: '集市',
   },
   {
     key: 'tracker',
@@ -89,8 +89,8 @@ export const items: SidebarItem[] = [
 ]
 
 export const menu: MenuProps = {
-  title: 'home',
-  description: '描述',
+  title: 'cmdb',
+  description: 'cmdb的描述',
   defaultSelectedKey: 'home',
   items,
   customFooterContent: (<div>ppp</div>),

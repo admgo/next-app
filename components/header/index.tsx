@@ -21,7 +21,8 @@ export default function Header() {
                  <AdmgoLogo />
             </NavbarBrand>
             <NavbarContent className="w-full flex-1 grow">
-                <NavbarItem>1.1</NavbarItem>
+              <NavbarItem><Link href="/home">home</Link></NavbarItem>
+              <NavbarItem><Link href="/cmdb">cmdb</Link></NavbarItem>
                 <NavbarItem>1.2</NavbarItem>
                 <NavbarItem>1.3</NavbarItem>
             </NavbarContent>
