@@ -1,3 +1,3 @@
-export default function CMDB() {
+export default function Menu1() {
   return <div>cmdb</div>
 }

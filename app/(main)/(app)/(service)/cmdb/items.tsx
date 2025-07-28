@@ -1,7 +1,7 @@
 import { Chip } from '@heroui/react'
 import { Icon } from '@iconify/react'
 
-import type { SidebarItem } from '@/components/sidebar/sidebar'
+import type { SidebarItem } from '@/components/sidebar_bk/sidebar'
 
 /**
  * Please check the https://heroui.com/docs/guide/routing to have a seamless router integration

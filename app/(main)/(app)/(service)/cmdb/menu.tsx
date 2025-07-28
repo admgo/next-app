@@ -5,18 +5,18 @@ import type { MenuProps } from '@/components/menu/store'
 
 import type {
   SidebarItem,
-} from '@/components/sidebar/sidebar'
+} from '@/components/sidebar_bk/sidebar'
 
 export const items: SidebarItem[] = [
   {
-    key: 'home',
-    href: '/home/access',
+    key: 'menu-1',
+    href: '/cmdb/menu-1',
     icon: 'solar:home-2-linear',
     title: '模型概览',
   },
   {
-    key: 'projects',
-    href: '/home/my',
+    key: 'menu-2',
+    href: '/cmdb/menu-2',
     icon: 'solar:widget-2-outline',
     title: '模型',
     endContent: (
@@ -89,9 +89,9 @@ export const items: SidebarItem[] = [
 ]
 
 export const menu: MenuProps = {
-  title: 'cmdb',
-  description: 'cmdb的描述',
-  defaultSelectedKey: 'home',
+  title: 'test',
+  description: 'test description is so long, very very very very very very lonnnnnnng',
+  defaultSelectedKey: 'menu-1',
   items,
   customFooterContent: (<div>ppp</div>),
 }

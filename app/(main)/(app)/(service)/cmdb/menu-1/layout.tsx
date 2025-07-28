@@ -4,6 +4,7 @@ import React from 'react'
 import { Button, Tab, Tabs, useDisclosure } from '@heroui/react'
 import { Icon } from '@iconify/react'
 import { useMediaQuery } from 'usehooks-ts'
+import { BreadcrumbItem, Breadcrumbs } from "@heroui/breadcrumbs";
 export default function CMDBLayout({
   children,
 }: {
@@ -66,6 +67,13 @@ export default function CMDBLayout({
           tab-4
         </Tab>
       </Tabs>
+      <Breadcrumbs key="s" variant="solid">
+        <BreadcrumbItem>Home</BreadcrumbItem>
+        <BreadcrumbItem>Music</BreadcrumbItem>
+        <BreadcrumbItem>Artist</BreadcrumbItem>
+        <BreadcrumbItem>Album</BreadcrumbItem>
+        <BreadcrumbItem>Song</BreadcrumbItem>
+      </Breadcrumbs>
     </div>
   )
 }

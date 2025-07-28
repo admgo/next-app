@@ -8,7 +8,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       <div className="!border-r-small border-divider">
         <Menu />
       </div>
-      <div className="w-full flex-1 flex-col overflow-y-auto p-4">
+      <div className="w-full flex-1 flex-col overflow-y-auto">
         {children}
       </div>
     </>

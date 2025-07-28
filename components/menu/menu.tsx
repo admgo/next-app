@@ -1,16 +1,10 @@
 'use client'
 
 import React from 'react'
-import {
-  Button,
-  Divider,
-  ScrollShadow,
-  cn,
-} from '@heroui/react'
+import { Button, Divider, ScrollShadow, cn } from '@heroui/react'
+import SidebarDrawer from './sidebar/sidebar-drawer'
 
-import SidebarDrawer from '@/components/sidebar/sidebar-drawer'
-
-import Sidebar from '@/components/sidebar/sidebar'
+import Sidebar from './sidebar/sidebar'
 
 import MenuHeader from './menu-header'
 import MenuFooter from './menu-footer'
@@ -23,16 +17,16 @@ type MenuProps = {
   ref?: React.Ref<HTMLAnchorElement>;
 }
 
-const Menu: React.FC<MenuProps> = ({ ref, ...props }: MenuProps) => {
+const Menu: React.FC = ({ ref, ...props }: MenuProps) => {
   const {
     title,
     items,
     customFooterContent,
     customHeaderContent,
-    defaultSelectedKey,
     description,
     isOpen,
     onOpenChange,
+    isLoaded,
   } = useMenuStore(
     useShallow(state => ({
       title: state.title,
@@ -41,8 +35,8 @@ const Menu: React.FC<MenuProps> = ({ ref, ...props }: MenuProps) => {
       onOpenChange: state.onOpenChange,
       customHeaderContent: state.customHeaderContent,
       description: state.description,
-      defaultSelectedKey: state.defaultSelectedKey,
       customFooterContent: state.customFooterContent,
+      isLoaded: state.isLoaded,
     })),
   )
 
@@ -54,6 +48,7 @@ const Menu: React.FC<MenuProps> = ({ ref, ...props }: MenuProps) => {
   const onToggle = () => {
     setIsCollapsed(prev => !prev)
   }
+  console.log(isLoaded)
 
   return (
     <>
@@ -66,20 +61,12 @@ const Menu: React.FC<MenuProps> = ({ ref, ...props }: MenuProps) => {
         <div className="relative flex h-full w-56 flex-col">
           {/* Header */}
           <div className="h-36 shrink-0 grow-0 overflow-y-auto">
-            {customHeaderContent ? (
-              <MenuHeader customHeaderContent={customHeaderContent} />
-            ) : title ? (
-              <MenuHeader title={title} description={description} />
-            ) : null}
+            <MenuHeader customHeaderContent={customHeaderContent} title={title} description={description} isLoaded={isLoaded}/>
           </div>
           <Divider />
           {/* Sidebar */}
           <ScrollShadow className="h-full max-h-full py-6">
-            <Sidebar
-              defaultSelectedKey={defaultSelectedKey}
-              items={items}
-              ref={ref}
-            />
+            <Sidebar items={items} ref={ref} isLoaded={isLoaded}/>
           </ScrollShadow>
           {/* Footer */}
           <div className="max-h-36 shrink-0 grow-0 overflow-y-auto">
@@ -105,33 +92,37 @@ const Menu: React.FC<MenuProps> = ({ ref, ...props }: MenuProps) => {
             },
           )}
         >
-          {customHeaderContent ? (
-            <MenuHeader customHeaderContent={customHeaderContent} />
-          ) : title ? (
-            <MenuHeader title={title} description={description} />
-          ) : null}
+          <MenuHeader customHeaderContent={customHeaderContent} title={title} description={description} isLoaded={isLoaded}/>
         </div>
 
         <div className="shrink-0">
-          <Button fullWidth={true} className="min-w-0" variant="light" onPress={onToggle}>
+          <Button
+            fullWidth={true}
+            className="min-w-0"
+            variant="light"
+            onPress={onToggle}
+          >
             <Icon
               className="text-default-500"
               height={24}
-              icon={isCompact ? 'tabler:arrow-bar-right' : 'tabler:arrow-bar-left'}
+              icon={
+                isCompact ? 'tabler:arrow-bar-right' : 'tabler:arrow-bar-left'
+              }
               width={24}
             />
           </Button>
         </div>
 
-          <ScrollShadow className="h-full py-6">
-            <Sidebar
-              defaultSelectedKey="home"
-              isCompact={isCompact}
-              items={items}
-            />
-          </ScrollShadow>
+        <ScrollShadow className="h-full py-6">
+          <Sidebar
+            isCompact={isCompact}
+            items={items}
+            ref={ref}
+            isLoaded={isLoaded}
+          />
+        </ScrollShadow>
 
-         {/* Footer */}
+        {/* Footer */}
         <div className="max-h-36 shrink-0 grow-0 overflow-y-auto">
           <MenuFooter customFooterContent={customFooterContent} />
         </div>
