@@ -1,45 +1,18 @@
 'use client'
 
-import React from 'react'
-import { Button, Tab, Tabs, useDisclosure } from '@heroui/react'
-import { Icon } from '@iconify/react'
-import { useMediaQuery } from 'usehooks-ts'
-import { BreadcrumbItem, Breadcrumbs } from '@heroui/breadcrumbs'
-import { useTheme } from 'next-themes'
-export default function CMDBLayout({
+import { Button } from '@heroui/button'
+import { Tab, Tabs } from '@heroui/tabs'
+// import { useTheme } from 'next-themes'
+export default function Menu1Layout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const { isOpen, onOpenChange } = useDisclosure()
-  const [isCollapsed, setIsCollapsed] = React.useState(false)
-  const isMobile = useMediaQuery('(max-width: 768px)')
-  const { theme, setTheme } = useTheme()
-
-  const onToggle = React.useCallback(() => {
-    setIsCollapsed(prev => !prev)
-  }, [])
-
+  // const { theme, setTheme } = useTheme()
   return (
     <div className="w-full max-w-2xl flex-1 p-4">
       {/* Title */}
       <div className="flex items-center gap-x-3">
-        <Button
-          isIconOnly
-          className="sm:hidden"
-          size="sm"
-          variant="flat"
-          onPress={() => {
-            setIsCollapsed(false)
-            onOpenChange()
-          }}
-        >
-          <Icon
-            className="text-default-500"
-            icon="solar:sidebar-minimalistic-linear"
-            width={20}
-          />
-        </Button>
         <h1 className="text-default-foreground text-3xl font-bold leading-9">
           Settings
         </h1>
@@ -69,19 +42,11 @@ export default function CMDBLayout({
           tab-4
         </Tab>
       </Tabs>
-      <Breadcrumbs key="s" variant="solid">
-        <BreadcrumbItem>Home</BreadcrumbItem>
-        <BreadcrumbItem>Music</BreadcrumbItem>
-        <BreadcrumbItem>Artist</BreadcrumbItem>
-        <BreadcrumbItem>Album</BreadcrumbItem>
-        <BreadcrumbItem>Song</BreadcrumbItem>
-      </Breadcrumbs>
-      <div>
-        The current theme is: {theme}
-        <Button onPress={() => setTheme('light')}>Light Mode</Button>
-        <Button onPress={() => setTheme('dark')}>Dark Mode</Button>
-      </div>
-
+      {/*<div>*/}
+      {/*  The current theme is: {theme}*/}
+      {/*  <Button onPress={() => setTheme('light')}>Light Mode</Button>*/}
+      {/*  <Button onPress={() => setTheme('dark')}>Dark Mode</Button>*/}
+      {/*</div>*/}
     </div>
   )
 }

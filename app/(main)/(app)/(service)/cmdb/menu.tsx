@@ -90,7 +90,7 @@ export const items: SidebarItem[] = [
 
 export const menu: MenuProps = {
   title: 'test',
-  description: 'test description is so long, very very very very very very lonnnnnnng',
+  description: 'test description is so long,  very very very lonnnnnnng',
   defaultSelectedKey: 'menu-1',
   items,
   customFooterContent: (<div>ppp</div>),

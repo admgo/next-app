@@ -9,8 +9,9 @@
       <change beforePath="$PROJECT_DIR$/app/(main)/(app)/(service)/cmdb/menu-1/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(app)/(service)/cmdb/menu-1/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(main)/(app)/(service)/cmdb/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(app)/(service)/cmdb/menu.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(main)/(app)/(service)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(app)/(service)/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/header/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/menu/menu-header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/menu/menu-header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/menu/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/menu/menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +151,7 @@
       <workItem from="1752647795193" duration="10743000" />
       <workItem from="1753320205084" duration="18700000" />
       <workItem from="1753347163363" duration="25024000" />
-      <workItem from="1753429837278" duration="46126000" />
+      <workItem from="1753429837278" duration="56488000" />
     </task>
     <servers />
   </component>

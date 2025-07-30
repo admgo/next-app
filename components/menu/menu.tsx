@@ -42,14 +42,18 @@ const Menu: React.FC = ({ ref, ...props }: MenuProps) => {
 
   const [isCollapsed, setIsCollapsed] = React.useState(false)
   const isMobile = useMediaQuery('(max-width: 768px)')
+  const [isMounted, setIsMounted] = React.useState(false)
 
+  React.useEffect(() => {
+    setIsMounted(true)
+  }, [])
   const isCompact = isCollapsed || isMobile
 
   const onToggle = () => {
     setIsCollapsed(prev => !prev)
   }
-  console.log(isLoaded)
 
+  if (!isMounted) return null
   return (
     <>
       <SidebarDrawer
@@ -60,7 +64,7 @@ const Menu: React.FC = ({ ref, ...props }: MenuProps) => {
       >
         <div className="relative flex h-full w-56 flex-col">
           {/* Header */}
-          <div className="h-36 shrink-0 grow-0 overflow-y-auto">
+          <div className="h-24 shrink-0 grow-0 overflow-y-auto">
             <MenuHeader customHeaderContent={customHeaderContent} title={title} description={description} isLoaded={isLoaded}/>
           </div>
           <Divider />
@@ -85,14 +89,14 @@ const Menu: React.FC = ({ ref, ...props }: MenuProps) => {
       >
         <div
           className={cn(
-            'h-36 shrink-0 grow-0 overflow-y-auto',
+            'h-24 shrink-0 grow-0 overflow-y-auto',
 
             {
-              'justify-center gap-0': isCompact,
+              'flex justify-center items-center w-16': isCompact,
             },
           )}
         >
-          <MenuHeader customHeaderContent={customHeaderContent} title={title} description={description} isLoaded={isLoaded}/>
+          <MenuHeader isCompact={isCompact} customHeaderContent={customHeaderContent} title={title} description={description} isLoaded={isLoaded}/>
         </div>
 
         <div className="shrink-0">

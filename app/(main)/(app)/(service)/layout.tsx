@@ -35,7 +35,7 @@ const ServiceLayout: React.FC<{ children: React.ReactNode }> = ({
             </Button>
           </NavbarItem>
           <NavbarItem className="hidden lg:flex">
-            <Breadcrumbs variant="solid">
+            <Breadcrumbs variant="solid" size="sm">
               <BreadcrumbItem>Home</BreadcrumbItem>
               <BreadcrumbItem>Music</BreadcrumbItem>
               <BreadcrumbItem>Artist</BreadcrumbItem>
