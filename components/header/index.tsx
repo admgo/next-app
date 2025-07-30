@@ -13,28 +13,10 @@ import {
     NavbarItem,
 } from '@heroui/react'
 import { AdmgoLogo } from '@/components/icons'
-import { Button } from '@heroui/button'
-import { Icon } from '@iconify/react'
-import { useMenuStore } from '@/components/menu/store'
 
 export default function Header() {
-    const onOpen = useMenuStore(store => store.onOpen)
     return (
-        <Navbar className="border-b-1.5 items-start justify-start overflow-x-auto bg-amber-50" maxWidth="full">
-            <Button
-                isIconOnly
-                className="flex sm:hidden"
-                size="sm"
-                variant="light"
-                onPress={onOpen}
-            >
-                <Icon
-                    className="text-default-500"
-                    height={24}
-                    icon="solar:hamburger-menu-outline"
-                    width={24}
-                />
-            </Button>
+        <Navbar isBordered className="items-start justify-start overflow-x-auto bg-amber-50" maxWidth="full" height="3rem">
             <NavbarBrand className="flex-none grow-0">
                  <AdmgoLogo />
             </NavbarBrand>

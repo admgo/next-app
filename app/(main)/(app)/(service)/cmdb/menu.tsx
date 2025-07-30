@@ -12,13 +12,13 @@ export const items: SidebarItem[] = [
     key: 'menu-1',
     href: '/cmdb/menu-1',
     icon: 'solar:home-2-linear',
-    title: '模型概览',
+    title: 'overview',
   },
   {
     key: 'menu-2',
     href: '/cmdb/menu-2',
     icon: 'solar:widget-2-outline',
-    title: '模型',
+    title: 'list',
     endContent: (
       <Icon
         className="text-default-400"
@@ -31,7 +31,7 @@ export const items: SidebarItem[] = [
     key: 'tasks',
     href: '#',
     icon: 'solar:checklist-minimalistic-outline',
-    title: '新建模型',
+    title: 'task',
     endContent: (
       <Icon
         className="text-default-400"
@@ -44,7 +44,7 @@ export const items: SidebarItem[] = [
     key: 'team',
     href: '#',
     icon: 'solar:users-group-two-rounded-outline',
-    title: '集市',
+    title: 'plugin',
   },
   {
     key: 'tracker',

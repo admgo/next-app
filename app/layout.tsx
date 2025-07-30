@@ -39,7 +39,7 @@ export default function RootLayout({
           fontMono.variable,
         )}
       >
-        <Providers themeProps={{ attribute: 'class', defaultTheme: 'light' }}>
+        <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
           <div className="relative h-full w-full overflow-x-auto overflow-y-auto">
               {children}
           </div>

@@ -4,7 +4,8 @@ import React from 'react'
 import { Button, Tab, Tabs, useDisclosure } from '@heroui/react'
 import { Icon } from '@iconify/react'
 import { useMediaQuery } from 'usehooks-ts'
-import { BreadcrumbItem, Breadcrumbs } from "@heroui/breadcrumbs";
+import { BreadcrumbItem, Breadcrumbs } from '@heroui/breadcrumbs'
+import { useTheme } from 'next-themes'
 export default function CMDBLayout({
   children,
 }: {
@@ -13,6 +14,7 @@ export default function CMDBLayout({
   const { isOpen, onOpenChange } = useDisclosure()
   const [isCollapsed, setIsCollapsed] = React.useState(false)
   const isMobile = useMediaQuery('(max-width: 768px)')
+  const { theme, setTheme } = useTheme()
 
   const onToggle = React.useCallback(() => {
     setIsCollapsed(prev => !prev)
@@ -74,6 +76,12 @@ export default function CMDBLayout({
         <BreadcrumbItem>Album</BreadcrumbItem>
         <BreadcrumbItem>Song</BreadcrumbItem>
       </Breadcrumbs>
+      <div>
+        The current theme is: {theme}
+        <Button onPress={() => setTheme('light')}>Light Mode</Button>
+        <Button onPress={() => setTheme('dark')}>Dark Mode</Button>
+      </div>
+
     </div>
   )
 }
