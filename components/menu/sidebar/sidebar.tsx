@@ -60,7 +60,9 @@ const Sidebar = React.forwardRef<HTMLElement, SidebarProps>(
     },
     ref,
   ) => {
-    const defaultSelectedKey = useMenuStore(state => state.defaultSelectedKey)
+    const defaultSelectedKey = useMenuStore(
+      state => state.defaultSelectedKey,
+    )
     // const setSelectKey = (key: any) => {
     //   useMenuStore.setState(
     //     {
@@ -92,7 +94,9 @@ const Sidebar = React.forwardRef<HTMLElement, SidebarProps>(
     const renderNestItem = React.useCallback(
       (item: SidebarItem) => {
         const isNestType
-          = item.items && item.items?.length > 0 && item?.type === SidebarItemType.Nest
+          = item.items
+          && item.items?.length > 0
+          && item?.type === SidebarItemType.Nest
 
         if (isNestType) {
           // Is a nest type item , so we need to remove the href
@@ -114,7 +118,9 @@ const Sidebar = React.forwardRef<HTMLElement, SidebarProps>(
               ),
             }}
             endContent={
-              isCompact || isNestType || hideEndContent ? null : (item.endContent ?? null)
+              isCompact || isNestType || hideEndContent
+                ? null
+                : (item.endContent ?? null)
             }
             startContent={
               isCompact || isNestType ? null : item.icon ? (
@@ -162,7 +168,9 @@ const Sidebar = React.forwardRef<HTMLElement, SidebarProps>(
                   }}
                   title={
                     item.icon ? (
-                      <div className={'flex h-11 items-center gap-2 px-2 py-1.5'}>
+                      <div
+                        className={'flex h-11 items-center gap-2 px-2 py-1.5'}
+                      >
                         <Icon
                           className={cn(
                             'text-default-500 group-data-[selected=true]:text-foreground',
@@ -209,16 +217,19 @@ const Sidebar = React.forwardRef<HTMLElement, SidebarProps>(
     const renderItem = React.useCallback(
       (item: SidebarItem) => {
         const isNestType
-          = item.items && item.items?.length > 0 && item?.type === SidebarItemType.Nest
+          = item.items
+          && item.items?.length > 0
+          && item?.type === SidebarItemType.Nest
 
-        if (isNestType)
-          return renderNestItem(item)
+        if (isNestType) return renderNestItem(item)
 
         return (
           <ListboxItem
             {...item}
             key={item.key}
-            endContent={isCompact || hideEndContent ? null : (item.endContent ?? null)}
+            endContent={
+              isCompact || hideEndContent ? null : (item.endContent ?? null)
+            }
             startContent={
               isCompact ? null : item.icon ? (
                 <Icon
@@ -261,75 +272,77 @@ const Sidebar = React.forwardRef<HTMLElement, SidebarProps>(
       [isCompact, hideEndContent, iconClassName, itemClasses?.base],
     )
 
+    const skeletonLength = Array.from({ length: 6 })
+
     return (
       <>
-      {isLoaded
-        ? <Listbox
-        key={isCompact ? 'compact' : 'default'}
-        ref={ref}
-        hideSelectedIcon
-        aria-label="sidebar"
-        as="nav"
-        className={cn('list-none', className)}
-        classNames={{
-          ...classNames,
-          list: cn('items-center', classNames?.list),
-        }}
-        color="default"
-        itemClasses={{
-          ...itemClasses,
-          base: cn(
-            'rounded-large data-[selected=true]:bg-default-100 h-[44px] min-h-11 px-3',
-            itemClasses?.base,
-          ),
-          title: cn(
-            'text-small text-default-500 group-data-[selected=true]:text-foreground font-medium',
-            itemClasses?.title,
-          ),
-        }}
-        items={items}
-        selectedKeys={[defaultSelectedKey] as unknown as Selection}
-        selectionMode="single"
-        variant="flat"
-        onSelectionChange={(keys) => {
-          const key = Array.from(keys)[0]
-          // setSelectKey(key)
-          onSelect?.(key as string)
-        }}
-        {...props}
-      >
-        {(item) => {
-          return item.items && item.items?.length > 0 && item?.type === SidebarItemType.Nest ? (
-            renderNestItem(item)
-          ) : item.items && item.items?.length > 0 ? (
-            <ListboxSection
-              key={item.key}
-              classNames={sectionClasses}
-              showDivider={isCompact}
-              title={item.title}
-            >
-              {item.items.map(renderItem)}
-            </ListboxSection>
-          ) : (
-            renderItem(item)
-          )
-        }}
-      </Listbox>
-        : <>
-        <div className="p-1">
-          <div className="pt-0.5">
-            <Skeleton className="rounded-lg">
-              <div className="h-[44px] min-h-11" />
-            </Skeleton>
-          </div>
-          <div className="pt-0.5">
-          <Skeleton className="rounded-lg">
-            <div className="h-[44px] min-h-11" />
-          </Skeleton>
-          </div>
-        </div>
-        </>
-      }
+        {isLoaded ? (
+          <Listbox
+            key={isCompact ? 'compact' : 'default'}
+            ref={ref}
+            hideSelectedIcon
+            aria-label="sidebar"
+            as="nav"
+            className={cn('list-none', className)}
+            classNames={{
+              ...classNames,
+              list: cn('items-center', classNames?.list),
+            }}
+            color="default"
+            itemClasses={{
+              ...itemClasses,
+              base: cn(
+                'rounded-large data-[selected=true]:bg-default-100 h-[44px] min-h-11 px-3',
+                itemClasses?.base,
+              ),
+              title: cn(
+                'text-small text-default-500 group-data-[selected=true]:text-foreground font-medium',
+                itemClasses?.title,
+              ),
+            }}
+            items={items}
+            selectedKeys={[defaultSelectedKey] as unknown as Selection}
+            selectionMode="single"
+            variant="flat"
+            onSelectionChange={(keys) => {
+              const key = Array.from(keys)[0]
+              // setSelectKey(key)
+              onSelect?.(key as string)
+            }}
+            {...props}
+          >
+            {(item) => {
+              return item.items
+                && item.items?.length > 0
+                && item?.type === SidebarItemType.Nest ? (
+                renderNestItem(item)
+              ) : item.items && item.items?.length > 0 ? (
+                <ListboxSection
+                  key={item.key}
+                  classNames={sectionClasses}
+                  showDivider={isCompact}
+                  title={item.title}
+                >
+                  {item.items.map(renderItem)}
+                </ListboxSection>
+              ) : (
+                renderItem(item)
+              )
+            }}
+          </Listbox>
+        ) : (
+          <>
+            <div className="w-full p-1">
+              {skeletonLength.map((_, index) => (
+                <div key={index} className="pt-0.5">
+                  <Skeleton className="rounded-lg">
+                    <div className="h-[44px] min-h-11" />
+                  </Skeleton>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
       </>
     )
   },

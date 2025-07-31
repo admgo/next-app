@@ -16,7 +16,7 @@ import { AdmgoLogo } from '@/components/icons'
 
 export default function Header() {
     return (
-        <Navbar isBordered className="items-start justify-start overflow-x-auto bg-amber-50" maxWidth="full" height="3rem">
+        <Navbar isBordered className="bg-foreground-100 items-start justify-start overflow-x-auto" maxWidth="full" height="3rem">
             <NavbarBrand className="flex-none grow-0">
                  <AdmgoLogo />
             </NavbarBrand>

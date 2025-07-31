@@ -11,13 +11,15 @@ import MenuFooter from './menu-footer'
 import { useMenuStore } from '@/components/menu/store'
 import { useShallow } from 'zustand/react/shallow'
 import { Icon } from '@iconify/react'
-import { useMediaQuery } from 'usehooks-ts'
 
 type MenuProps = {
+  isCompact?: boolean;
+  onToggle?: () => void;
   ref?: React.Ref<HTMLAnchorElement>;
 }
 
-const Menu: React.FC = ({ ref, ...props }: MenuProps) => {
+const Menu = React.forwardRef<HTMLAnchorElement, MenuProps>(
+  ({ isCompact,onToggle, ...props }, ref) => {
   const {
     title,
     items,
@@ -39,21 +41,6 @@ const Menu: React.FC = ({ ref, ...props }: MenuProps) => {
       isLoaded: state.isLoaded,
     })),
   )
-
-  const [isCollapsed, setIsCollapsed] = React.useState(false)
-  const isMobile = useMediaQuery('(max-width: 768px)')
-  const [isMounted, setIsMounted] = React.useState(false)
-
-  React.useEffect(() => {
-    setIsMounted(true)
-  }, [])
-  const isCompact = isCollapsed || isMobile
-
-  const onToggle = () => {
-    setIsCollapsed(prev => !prev)
-  }
-
-  if (!isMounted) return null
   return (
     <>
       <SidebarDrawer
@@ -65,12 +52,13 @@ const Menu: React.FC = ({ ref, ...props }: MenuProps) => {
         <div className="relative flex h-full w-56 flex-col">
           {/* Header */}
           <div className="h-24 shrink-0 grow-0 overflow-y-auto">
-            <MenuHeader customHeaderContent={customHeaderContent} title={title} description={description} isLoaded={isLoaded}/>
+            <MenuHeader customHeaderContent={customHeaderContent} title={title} description={description}
+                        isLoaded={isLoaded} />
           </div>
           <Divider />
           {/* Sidebar */}
           <ScrollShadow className="h-full max-h-full py-6">
-            <Sidebar items={items} ref={ref} isLoaded={isLoaded}/>
+            <Sidebar items={items} ref={ref} isLoaded={isLoaded} />
           </ScrollShadow>
           {/* Footer */}
           <div className="max-h-36 shrink-0 grow-0 overflow-y-auto">
@@ -81,22 +69,23 @@ const Menu: React.FC = ({ ref, ...props }: MenuProps) => {
 
       <div
         className={cn(
-          'border-r-1 transition-width relative flex h-full w-56 flex-col',
+          'flex h-full w-full flex-col',
           {
-            'w-16 items-center': isCompact,
+            'items-center': isCompact,
           },
         )}
       >
         <div
           className={cn(
-            'h-24 shrink-0 grow-0 overflow-y-auto',
+            'h-24 shrink-0 grow-0 overflow-y-auto w-full',
 
             {
-              'flex justify-center items-center w-16': isCompact,
+              'flex justify-center items-center': isCompact,
             },
           )}
         >
-          <MenuHeader isCompact={isCompact} customHeaderContent={customHeaderContent} title={title} description={description} isLoaded={isLoaded}/>
+          <MenuHeader isCompact={isCompact} customHeaderContent={customHeaderContent} title={title}
+                      description={description} isLoaded={isLoaded} />
         </div>
 
         <div className="shrink-0">
@@ -117,7 +106,7 @@ const Menu: React.FC = ({ ref, ...props }: MenuProps) => {
           </Button>
         </div>
 
-        <ScrollShadow className="h-full py-6">
+        <ScrollShadow className="h-full w-full py-6">
           <Sidebar
             isCompact={isCompact}
             items={items}
@@ -133,5 +122,6 @@ const Menu: React.FC = ({ ref, ...props }: MenuProps) => {
       </div>
     </>
   )
-}
+},
+)
 export default React.memo(Menu)
