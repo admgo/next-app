@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f956fc9-5c30-489d-86a1-1a86c3e367d0" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/account/layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/account/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/appearance/layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/appearance/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/profile/layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/profile/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/setting-item/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(main)/(app)/(service)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(app)/(service)/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(main)/(app)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(app)/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/header/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/menu/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/menu/menu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/menu/sidebar/sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/menu/sidebar/sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sidebar_bk/empty-content.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sidebar_bk/sidebar-drawer.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sidebar_bk/sidebar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(main)/(app)/setting/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +73,7 @@
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/kenley/github/admgo/next-app/components/menu",
+    "last_opened_file_path": "/Users/kenley/github/admgo/next-app/app/(main)/(app)/setting/profile",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
@@ -90,11 +90,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/(main)/(app)/setting/profile" />
+      <recent name="$PROJECT_DIR$/app/(main)/(app)/setting/appearance" />
+      <recent name="$PROJECT_DIR$/app/(main)/(app)/setting/account" />
+      <recent name="$PROJECT_DIR$/app/(main)/(app)/setting" />
       <recent name="$PROJECT_DIR$/components/menu" />
-      <recent name="$PROJECT_DIR$/app/(main)/(app)/(service)/cmdb/menu-2" />
-      <recent name="$PROJECT_DIR$/app/(main)/(service)/cmdb" />
-      <recent name="$PROJECT_DIR$/assets" />
-      <recent name="$PROJECT_DIR$/app/(main)/(service)/cmdb/menu-1" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/(main)/(service)/(service)" />
@@ -153,7 +153,7 @@
       <workItem from="1752647795193" duration="10743000" />
       <workItem from="1753320205084" duration="18700000" />
       <workItem from="1753347163363" duration="25024000" />
-      <workItem from="1753429837278" duration="67306000" />
+      <workItem from="1753429837278" duration="74664000" />
     </task>
     <servers />
   </component>

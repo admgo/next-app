@@ -1,8 +1,9 @@
 import React from 'react'
+import AppearanceLayout from "@/app/(main)/(app)/setting/appearance/layout";
 
-const Setting: React.FC = () => {
+const Appearance: React.FC = () => {
   return(
-    <div>setting</div>
+    <div>Appearance</div>
   )
 }
-export default Setting
+export default Appearance
