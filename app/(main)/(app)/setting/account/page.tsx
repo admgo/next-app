@@ -1,7 +1,11 @@
 import React from 'react'
 import { Button } from '@heroui/button'
 import { Input } from '@heroui/input'
-import { SettingCard, SettingCardContent, SettingCardItem } from '../setting-item'
+import {
+  SettingCard,
+  SettingCardContent,
+  SettingCardItem,
+} from '../setting-card'
 import { Spacer } from '@heroui/spacer'
 import { cn } from '@heroui/react'
 
@@ -26,23 +30,62 @@ const Account: React.FC = ({ className, ...props }: { className?: string }) => {
   return (
     <div className={cn('', className)} {...props}>
       {/* Full name */}
-      <SettingCard title="Change Username" description="change your username, username is unique.">
+      <SettingCard
+        title="Change Username"
+        description="change your username, username is unique."
+      >
         <SettingCardContent>
-        <SettingCardItem title="Username" description="Your username">
-          <Input className="rounded-small mt-2" placeholder="e.g Kate Moore" variant="faded"/>
-        </SettingCardItem>
-        <SettingCardItem title="Username" description="Your username">
-          <Input className="rounded-small mt-2" placeholder="e.g Kate Moore" variant="faded"/>
-        </SettingCardItem>
-        <SettingCardItem title="Username" description="Your username">
-          <Input className="rounded-small mt-2" placeholder="e.g Kate Moore" variant="faded"/>
-        </SettingCardItem>
+          <SettingCardItem title="Username" description="Your username">
+            <Input
+              className="rounded-small mt-2"
+              classNames={{
+                innerWrapper: 'bg-foreground-50',
+                inputWrapper: 'bg-foreground-50',
+              }}
+              placeholder="e.g Kate Moore"
+              variant="faded"
+            />
+          </SettingCardItem>
+          <SettingCardItem title="Username" description="Your username">
+            <Input
+              className="rounded-small mt-2"
+              classNames={{
+                innerWrapper: 'bg-foreground-50',
+                inputWrapper: 'bg-foreground-50',
+              }}
+              placeholder="e.g Kate Moore"
+              variant="faded"
+            />
+          </SettingCardItem>
+          <SettingCardItem title="Username" description="Your username">
+            <Input
+              className="rounded-small mt-2"
+              classNames={{
+                innerWrapper: 'bg-foreground-50',
+                inputWrapper: 'bg-foreground-50',
+              }}
+              placeholder="e.g Kate Moore"
+              variant="faded"
+            />
+          </SettingCardItem>
         </SettingCardContent>
       </SettingCard>
       <Spacer y={8} />
       {/* Username */}
       <SettingCard title="Full name" description="Your full name">
-        <Input className="rounded-small mt-2" placeholder="e.g Kate Moore" />
+        <SettingCardContent>
+          <SettingCardItem title="Username" description="Your username">
+            <Input
+              className="rounded-small mt-2"
+              classNames={{
+                innerWrapper: 'bg-foreground-50',
+                inputWrapper: 'bg-foreground-50',
+              }}
+              placeholder="e.g Kate Moore"
+              variant="faded"
+            />
+          </SettingCardItem>
+        </SettingCardContent>
       </SettingCard>
       <Spacer y={8} />
       {/* Email Address */}

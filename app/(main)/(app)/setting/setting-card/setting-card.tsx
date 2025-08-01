@@ -11,15 +11,18 @@ type SettingItemProps = {
 export const SettingCard = ({ title, description, children }: SettingItemProps) => {
   return (
     <>
-      <Card shadow="none" radius="sm" className="border-small border-foreground-300">
-        <CardHeader>
+      <Card shadow="none" radius="sm" className="border-medium border-foreground-300 w-full" classNames={{
+        header: 'p-4',
+        body: 'p-4',
+      }}>
+        <CardHeader className="bg-foreground-50">
           <div className="flex flex-col">
             <p className="text-xl font-semibold">{title}</p>
-            <p className="text-tiny text-default-500">{description}</p>
+            <p className="text-default-500 text-xs">{description}</p>
           </div>
         </CardHeader>
         <Divider/>
-        <CardBody className="bg-foreground-50">
+        <CardBody className="">
           {children}
         </CardBody>
       </Card>

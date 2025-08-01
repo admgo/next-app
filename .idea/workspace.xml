@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f956fc9-5c30-489d-86a1-1a86c3e367d0" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/setting-item/setting-card-content.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/setting-item/setting-card-item.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/setting-item/setting-card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/appearance/theme-custom-radio.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/setting-card/setting-card-group.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(main)/(app)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(app)/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(main)/(app)/setting/account/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/account/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(main)/(app)/setting/setting-item/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/setting-item/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(main)/(app)/setting/appearance/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/appearance/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(main)/(app)/setting/profile/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/profile/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(main)/(app)/setting/setting-item/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/setting-card/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(main)/(app)/setting/setting-item/setting-card-content.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/setting-card/setting-card-content.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(main)/(app)/setting/setting-item/setting-card-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/setting-card/setting-card-item.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(main)/(app)/setting/setting-item/setting-card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/setting-card/setting-card.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +26,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -151,7 +155,7 @@
       <workItem from="1752647795193" duration="10743000" />
       <workItem from="1753320205084" duration="18700000" />
       <workItem from="1753347163363" duration="25024000" />
-      <workItem from="1753429837278" duration="80593000" />
+      <workItem from="1753429837278" duration="92625000" />
     </task>
     <servers />
   </component>

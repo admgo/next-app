@@ -9,9 +9,9 @@ type SettingItemCardProps = {
 export const SettingCardItem = ({ title, description, children }: SettingItemCardProps) => {
   return (
     <>
-      <div className="flex flex-col gap-0.5">
-        <p className="text-small font-semibold">{title}</p>
-        <p className="text-tiny">{description}</p>
+      <div className="flex w-full flex-col gap-0.5">
+        <p className="text-medium font-semibold">{title}</p>
+        <p className="text-xs">{description}</p>
         <div>
           {children}
         </div>
