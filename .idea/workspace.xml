@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f956fc9-5c30-489d-86a1-1a86c3e367d0" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/account/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/account/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/appearance/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/appearance/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/profile/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/profile/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/setting-item/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/setting-item/setting-card-content.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/setting-item/setting-card-item.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/setting-item/setting-card.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(main)/(app)/setting/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(main)/(app)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(app)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(main)/(app)/setting/account/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/account/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(main)/(app)/setting/setting-item/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/(app)/setting/setting-item/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +21,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="CSS File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -73,7 +71,7 @@
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/kenley/github/admgo/next-app/app/(main)/(app)/setting/profile",
+    "last_opened_file_path": "/Users/kenley/github/admgo/next-app/app/(main)/(app)/setting/setting-item",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
@@ -90,11 +88,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/(main)/(app)/setting/setting-item" />
       <recent name="$PROJECT_DIR$/app/(main)/(app)/setting/profile" />
       <recent name="$PROJECT_DIR$/app/(main)/(app)/setting/appearance" />
       <recent name="$PROJECT_DIR$/app/(main)/(app)/setting/account" />
       <recent name="$PROJECT_DIR$/app/(main)/(app)/setting" />
-      <recent name="$PROJECT_DIR$/components/menu" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/(main)/(service)/(service)" />
@@ -153,7 +151,7 @@
       <workItem from="1752647795193" duration="10743000" />
       <workItem from="1753320205084" duration="18700000" />
       <workItem from="1753347163363" duration="25024000" />
-      <workItem from="1753429837278" duration="74664000" />
+      <workItem from="1753429837278" duration="80593000" />
     </task>
     <servers />
   </component>

@@ -31,7 +31,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       >
         <Menu isCompact={isCompact} onToggle={onToggle}/>
       </div>
-      <div className="w-full flex-1 flex-col overflow-y-auto">{children}</div>
+      <div className="w-full flex-1 flex-col overflow-y-auto p-6">{children}</div>
     </>
   )
 }
