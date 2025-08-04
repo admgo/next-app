@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --navbar-height: 50vh;
+    --sidebar-width: 300px,
+}
