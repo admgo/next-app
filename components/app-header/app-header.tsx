@@ -18,7 +18,7 @@ const AppHeader: React.FC = () => {
         classNames={{ wrapper: 'pr-6 pl-0' }}
       >
         <NavbarContent className="gap-0">
-          <NavbarItem className="h-full w-9">
+          <NavbarItem className="h-full w-9 flex sm:hidden">
             <Button
               isIconOnly
               as="div"
@@ -35,7 +35,7 @@ const AppHeader: React.FC = () => {
               />
             </Button>
           </NavbarItem>
-          <NavbarItem>
+          <NavbarItem className="ml-2">
             <Breadcrumbs size="sm">
               <BreadcrumbItem>Home</BreadcrumbItem>
               <BreadcrumbItem>Music</BreadcrumbItem>
