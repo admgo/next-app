@@ -8,7 +8,7 @@ import AppHeader from '@/components/app-header/app-header'
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   const [isCollapsed, setIsCollapsed] = React.useState(false)
   const isTablet = useMediaQuery('(max-width: 1024px)')
-  const isMobie = useMediaQuery('(max-width: 640px)')
+  const isMobile = useMediaQuery('(max-width: 640px)')
   const [isCompact, setIsCompact] = React.useState(isCollapsed || isTablet)
 
   React.useMemo(() => {
@@ -29,12 +29,12 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     <>
       <div
         className={cn(
-          'transition-width border-r-small border-divider h-full w-56 flex-col',
+          'transition-width h-full w-56 flex-col',
           {
             'w-16 items-center': isCompact,
           },
           {
-            'w-0 items-center': isMobie,
+            'w-0 items-center': isMobile,
           },
         )}
       >
