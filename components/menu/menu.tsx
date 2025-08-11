@@ -14,12 +14,13 @@ import { Icon } from '@iconify/react'
 
 type MenuProps = {
   isCompact?: boolean;
+  className?: string;
   onToggle?: () => void;
   ref?: React.Ref<HTMLAnchorElement>;
 }
 
 const Menu = React.forwardRef<HTMLAnchorElement, MenuProps>(
-  ({ isCompact, onToggle, ...props }, ref) => {
+  ({ isCompact, onToggle, className, ...props }, ref) => {
     const {
       title,
       items,
@@ -66,7 +67,7 @@ const Menu = React.forwardRef<HTMLAnchorElement, MenuProps>(
                 items={items}
                 ref={ref}
                 isLoaded={isLoaded}
-                defaultSelectedKey={items[0].key}
+                // defaultSelectedKey={items[0].key}
               />
             </ScrollShadow>
             {/* Footer */}
@@ -82,6 +83,7 @@ const Menu = React.forwardRef<HTMLAnchorElement, MenuProps>(
             {
               'items-center': isCompact,
             },
+            className,
           )}
         >
           <div
@@ -124,7 +126,7 @@ const Menu = React.forwardRef<HTMLAnchorElement, MenuProps>(
             <Sidebar
               isCompact={isCompact}
               items={items}
-              defaultSelectedKey={items[0].key}
+              // defaultSelectedKey={items[0].key}
               ref={ref}
               isLoaded={isLoaded}
             />

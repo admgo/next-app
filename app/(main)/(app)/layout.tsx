@@ -38,7 +38,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
           },
         )}
       >
-        <Menu isCompact={isCompact} onToggle={onToggle} />
+        <Menu isCompact={isCompact} onToggle={onToggle} className="bg-foreground-50"/>
       </div>
       <div className="flex h-full w-full flex-1 flex-col">
         <div className="shrink-0">
@@ -46,7 +46,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         </div>
         <main className="h-full w-full overflow-y-auto">
           <div className="m-auto h-full w-full max-w-[1296px]">
-            <div className="p-6">{children}</div>
+            <div className="p-6 w-full h-full">{children}</div>
           </div>
         </main>
       </div>
